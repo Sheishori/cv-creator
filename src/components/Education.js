@@ -6,14 +6,18 @@ class Education extends React.Component {
 		super();
 
 		this.state = {
-			school: '',
-			title: '',
-			date: '',
+			education: [],
+			new: {
+				school: '',
+				title: '',
+				date: '',
+			},
 			editing: false,
 		};
 
 		this.newEducation = this.newEducation.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+		this.saveEducation = this.saveEducation.bind(this);
 	}
 
 	newEducation() {
@@ -28,7 +32,23 @@ class Education extends React.Component {
 		const name = target.name;
 
 		this.setState({
-			[name]: value,
+			new: {
+				...this.state.new,
+				[name]: value,
+			},
+		});
+	}
+
+	saveEducation(event) {
+		event.preventDefault();
+		this.setState({
+			education: this.state.education.concat(this.state.new),
+			new: {
+				school: '',
+				title: '',
+				date: '',
+			},
+			editing: false,
 		});
 	}
 
@@ -67,7 +87,7 @@ class Education extends React.Component {
 						/>
 					</li>
 				</ul>
-				<button>Save</button>
+				<button onClick={this.saveEducation}>Save</button>
 			</form>
 		);
 
@@ -78,6 +98,15 @@ class Education extends React.Component {
 		return (
 			<div id='Education'>
 				<p>Education</p>
+				<ul>
+					{state.education.map((element) => {
+						return (
+							<li key={element.school}>
+								{element.date} - {element.school}, Title: {element.title}
+							</li>
+						);
+					})}
+				</ul>
 				{editing}
 				<button onClick={this.newEducation}>Add</button>
 			</div>
