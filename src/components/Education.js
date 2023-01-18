@@ -18,6 +18,7 @@ class Education extends React.Component {
 		this.newEducation = this.newEducation.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.saveEducation = this.saveEducation.bind(this);
+		this.cancel = this.cancel.bind(this);
 	}
 
 	newEducation() {
@@ -43,6 +44,18 @@ class Education extends React.Component {
 		event.preventDefault();
 		this.setState({
 			education: this.state.education.concat(this.state.new),
+			new: {
+				school: '',
+				title: '',
+				date: '',
+			},
+			editing: false,
+		});
+	}
+
+	cancel(event) {
+		event.preventDefault();
+		this.setState({
 			new: {
 				school: '',
 				title: '',
@@ -88,6 +101,7 @@ class Education extends React.Component {
 					</li>
 				</ul>
 				<button onClick={this.saveEducation}>Save</button>
+				<button onClick={this.cancel}>Cancel</button>
 			</form>
 		);
 
