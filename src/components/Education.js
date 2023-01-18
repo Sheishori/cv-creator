@@ -77,7 +77,7 @@ class Education extends React.Component {
 						<input
 							type='text'
 							name='school'
-							value={state.school}
+							value={state.new.school}
 							onChange={this.handleChange}
 						/>
 					</li>
@@ -86,7 +86,7 @@ class Education extends React.Component {
 						<input
 							type='text'
 							name='title'
-							value={state.title}
+							value={state.new.title}
 							onChange={this.handleChange}
 						/>
 					</li>
@@ -95,7 +95,7 @@ class Education extends React.Component {
 						<input
 							type='text'
 							name='date'
-							value={state.date}
+							value={state.new.date}
 							onChange={this.handleChange}
 						/>
 					</li>
