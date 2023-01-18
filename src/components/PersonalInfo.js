@@ -13,6 +13,7 @@ class PersonalInfo extends React.Component {
 
 		this.handleChange = this.handleChange.bind(this);
 		this.saveInfo = this.saveInfo.bind(this);
+		this.editInfo = this.editInfo.bind(this);
 	}
 
 	handleChange(event) {
@@ -29,6 +30,13 @@ class PersonalInfo extends React.Component {
 		event.preventDefault();
 		this.setState({
 			editing: false,
+		});
+	}
+
+	editInfo(event) {
+		event.preventDefault();
+		this.setState({
+			editing: true,
 		});
 	}
 
@@ -63,15 +71,19 @@ class PersonalInfo extends React.Component {
 		const nameDiv = <div>{state.name}</div>;
 		const emailDiv = <div>{state.email}</div>;
 		const phoneDiv = <div>{state.phone}</div>;
+		const submitButton = <button onClick={this.saveInfo}>Save</button>;
+		const editButton = <button onClick={this.editInfo}>Edit</button>;
 
 		let nameField = nameInput;
 		let emailField = emailInput;
 		let phoneField = phoneInput;
+		let button = submitButton;
 
 		if (state.editing === false) {
 			nameField = nameDiv;
 			emailField = emailDiv;
 			phoneField = phoneDiv;
+			button = editButton;
 		}
 
 		return (
@@ -91,7 +103,7 @@ class PersonalInfo extends React.Component {
 						{phoneField}
 					</li>
 				</ul>
-				<button onClick={this.saveInfo}>Save</button>
+				{button}
 			</form>
 		);
 	}
