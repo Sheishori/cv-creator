@@ -1,8 +1,8 @@
 import React from 'react';
 
 class PersonalInfo extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			name: '',
@@ -41,7 +41,7 @@ class PersonalInfo extends React.Component {
 	}
 
 	render() {
-		const { state } = this;
+		const { state, props } = this;
 
 		const nameInput = (
 			<input
@@ -79,11 +79,15 @@ class PersonalInfo extends React.Component {
 		let phoneField = phoneInput;
 		let button = submitButton;
 
-		if (state.editing === false) {
+		if (state.editing === false || props.editing === false) {
 			nameField = nameDiv;
 			emailField = emailDiv;
 			phoneField = phoneDiv;
 			button = editButton;
+		}
+
+		if (props.editing === false) {
+			button = '';
 		}
 
 		return (

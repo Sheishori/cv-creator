@@ -1,8 +1,8 @@
 import React from 'react';
 
 class Education extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			education: [],
@@ -65,7 +65,7 @@ class Education extends React.Component {
 	}
 
 	render() {
-		const { state } = this;
+		const { state, props } = this;
 
 		let editing = '';
 		const newForm = (
@@ -104,8 +104,17 @@ class Education extends React.Component {
 			</form>
 		);
 
-		if (this.state.editing) {
+		const AddButton = <button onClick={this.newEducation}>Add</button>;
+		let button = AddButton;
+
+		if (state.editing) {
 			editing = newForm;
+			button = '';
+		}
+
+		if (props.editing === false) {
+			editing = '';
+			button = '';
 		}
 
 		return (
@@ -121,7 +130,7 @@ class Education extends React.Component {
 					})}
 				</ul>
 				{editing}
-				<button onClick={this.newEducation}>Add</button>
+				{button}
 			</div>
 		);
 	}

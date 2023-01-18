@@ -1,8 +1,8 @@
 import React from 'react';
 
 class Experience extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			experience: [],
@@ -71,7 +71,7 @@ class Experience extends React.Component {
 	}
 
 	render() {
-		const { state } = this;
+		const { state, props } = this;
 
 		let editing = '';
 		const newForm = (
@@ -128,8 +128,17 @@ class Experience extends React.Component {
 			</form>
 		);
 
-		if (this.state.editing) {
+		const AddButton = <button onClick={this.newExperience}>Add</button>;
+		let button = AddButton;
+
+		if (state.editing) {
 			editing = newForm;
+			button = '';
+		}
+
+		if (props.editing === false) {
+			editing = '';
+			button = '';
 		}
 
 		return (
@@ -149,7 +158,7 @@ class Experience extends React.Component {
 					})}
 				</ul>
 				{editing}
-				<button onClick={this.newExperience}>Add</button>
+				{button}
 			</div>
 		);
 	}
