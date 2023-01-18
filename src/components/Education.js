@@ -1,4 +1,3 @@
-import { toHaveFocus } from '@testing-library/jest-dom/dist/matchers';
 import React from 'react';
 
 class Education extends React.Component {
