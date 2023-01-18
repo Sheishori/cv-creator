@@ -8,9 +8,11 @@ class PersonalInfo extends React.Component {
 			name: '',
 			email: '',
 			phone: '',
+			editing: true,
 		};
 
 		this.handleChange = this.handleChange.bind(this);
+		this.saveInfo = this.saveInfo.bind(this);
 	}
 
 	handleChange(event) {
@@ -23,8 +25,54 @@ class PersonalInfo extends React.Component {
 		});
 	}
 
+	saveInfo(event) {
+		event.preventDefault();
+		this.setState({
+			editing: false,
+		});
+	}
+
 	render() {
 		const { state } = this;
+
+		const nameInput = (
+			<input
+				type='text'
+				name='name'
+				value={state.name}
+				onChange={this.handleChange}
+			/>
+		);
+		const emailInput = (
+			<input
+				type='text'
+				name='email'
+				value={state.email}
+				onChange={this.handleChange}
+			/>
+		);
+		const phoneInput = (
+			<input
+				type='text'
+				name='phone'
+				value={state.phone}
+				onChange={this.handleChange}
+			/>
+		);
+
+		const nameDiv = <div>{state.name}</div>;
+		const emailDiv = <div>{state.email}</div>;
+		const phoneDiv = <div>{state.phone}</div>;
+
+		let nameField = nameInput;
+		let emailField = emailInput;
+		let phoneField = phoneInput;
+
+		if (state.editing === false) {
+			nameField = nameDiv;
+			emailField = emailDiv;
+			phoneField = phoneDiv;
+		}
 
 		return (
 			<form id='PersonalInfo'>
@@ -32,32 +80,18 @@ class PersonalInfo extends React.Component {
 				<ul>
 					<li>
 						<label htmlFor='name'>Name:</label>
-						<input
-							type='text'
-							name='name'
-							value={state.name}
-							onChange={this.handleChange}
-						/>
+						{nameField}
 					</li>
 					<li>
 						<label htmlFor='email'>E-mail:</label>
-						<input
-							type='text'
-							name='email'
-							value={state.email}
-							onChange={this.handleChange}
-						/>
+						{emailField}
 					</li>
 					<li>
 						<label htmlFor='phone'>Phone:</label>
-						<input
-							type='text'
-							name='phone'
-							value={state.phone}
-							onChange={this.handleChange}
-						/>
+						{phoneField}
 					</li>
 				</ul>
+				<button onClick={this.saveInfo}>Save</button>
 			</form>
 		);
 	}
