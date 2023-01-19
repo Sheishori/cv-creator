@@ -9,10 +9,18 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background-color: rgb(236, 236, 236);
 }
 
 .App {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	background-color: white;
+}
+
+.App form,
+.App div {
+	width: 900px;
+	padding: 3rem 10rem;
 }
