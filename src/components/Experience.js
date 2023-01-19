@@ -21,6 +21,7 @@ class Experience extends React.Component {
 		this.newExperience = this.newExperience.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.saveExperience = this.saveExperience.bind(this);
+		this.editExperience = this.editExperience.bind(this);
 		this.delExperience = this.delExperience.bind(this);
 		this.cancel = this.cancel.bind(this);
 	}
@@ -46,8 +47,22 @@ class Experience extends React.Component {
 
 	saveExperience(event) {
 		event.preventDefault();
+		let exp = [];
+
+		{
+			/* Check whether to edit or add a new element to the experience array */
+		}
+		if (
+			this.state.experience.find((element) => element.id === this.state.new.id)
+		) {
+			exp = this.state.experience.reduce((all, current) => {
+				if (current.id === this.state.new.id) return all.concat(this.state.new);
+				else return all.concat(current);
+			}, []);
+		} else exp = this.state.experience.concat(this.state.new);
+
 		this.setState({
-			experience: this.state.experience.concat(this.state.new),
+			experience: exp,
 			new: {
 				company: '',
 				position: '',
@@ -72,6 +87,14 @@ class Experience extends React.Component {
 				id: uniqid(),
 			},
 			editing: false,
+		});
+	}
+
+	editExperience(id) {
+		let edit = this.state.experience.find((element) => element.id === id);
+		this.setState({
+			new: edit,
+			editing: true,
 		});
 	}
 
@@ -162,6 +185,9 @@ class Experience extends React.Component {
 								<div>
 									{element.startDate}-{element.endDate} - {element.company},{' '}
 									{element.position}
+									<button onClick={() => this.editExperience(element.id)}>
+										Edit
+									</button>
 									<button onClick={() => this.delExperience(element.id)}>
 										Delete
 									</button>

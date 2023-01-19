@@ -19,6 +19,7 @@ class Education extends React.Component {
 		this.newEducation = this.newEducation.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.saveEducation = this.saveEducation.bind(this);
+		this.editEducation = this.editEducation.bind(this);
 		this.delEducation = this.delEducation.bind(this);
 		this.cancel = this.cancel.bind(this);
 	}
@@ -44,8 +45,22 @@ class Education extends React.Component {
 
 	saveEducation(event) {
 		event.preventDefault();
+		let edu = [];
+
+		{
+			/* Check whether to edit or add a new element to the experience array */
+		}
+		if (
+			this.state.education.find((element) => element.id === this.state.new.id)
+		) {
+			edu = this.state.education.reduce((all, current) => {
+				if (current.id === this.state.new.id) return all.concat(this.state.new);
+				else return all.concat(current);
+			}, []);
+		} else edu = this.state.education.concat(this.state.new);
+
 		this.setState({
-			education: this.state.education.concat(this.state.new),
+			education: edu,
 			new: {
 				school: '',
 				title: '',
@@ -66,6 +81,14 @@ class Education extends React.Component {
 				id: uniqid(),
 			},
 			editing: false,
+		});
+	}
+
+	editEducation(id) {
+		let edit = this.state.education.find((element) => element.id === id);
+		this.setState({
+			new: edit,
+			editing: true,
 		});
 	}
 
@@ -136,6 +159,9 @@ class Education extends React.Component {
 						return (
 							<li key={element.id}>
 								{element.date} - {element.school}, Title: {element.title}
+								<button onClick={() => this.editEducation(element.id)}>
+									Edit
+								</button>
 								<button onClick={() => this.delEducation(element.id)}>
 									Delete
 								</button>
