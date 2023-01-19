@@ -1,4 +1,5 @@
 import React from 'react';
+import uniqid from 'uniqid';
 
 class Education extends React.Component {
 	constructor(props) {
@@ -10,6 +11,7 @@ class Education extends React.Component {
 				school: '',
 				title: '',
 				date: '',
+				id: uniqid(),
 			},
 			editing: false,
 		};
@@ -47,6 +49,7 @@ class Education extends React.Component {
 				school: '',
 				title: '',
 				date: '',
+				id: uniqid(),
 			},
 			editing: false,
 		});
@@ -59,6 +62,7 @@ class Education extends React.Component {
 				school: '',
 				title: '',
 				date: '',
+				id: uniqid(),
 			},
 			editing: false,
 		});
@@ -123,7 +127,7 @@ class Education extends React.Component {
 				<ul>
 					{state.education.map((element) => {
 						return (
-							<li key={element.school}>
+							<li key={element.id}>
 								{element.date} - {element.school}, Title: {element.title}
 							</li>
 						);

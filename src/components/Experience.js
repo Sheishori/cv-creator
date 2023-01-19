@@ -1,4 +1,5 @@
 import React from 'react';
+import uniqid from 'uniqid';
 
 class Experience extends React.Component {
 	constructor(props) {
@@ -12,6 +13,7 @@ class Experience extends React.Component {
 				tasks: '',
 				startDate: '',
 				endDate: '',
+				id: uniqid(),
 			},
 			editing: false,
 		};
@@ -51,6 +53,7 @@ class Experience extends React.Component {
 				tasks: '',
 				startDate: '',
 				endDate: '',
+				id: uniqid(),
 			},
 			editing: false,
 		});
@@ -65,6 +68,7 @@ class Experience extends React.Component {
 				tasks: '',
 				startDate: '',
 				endDate: '',
+				id: uniqid(),
 			},
 			editing: false,
 		});
@@ -147,7 +151,7 @@ class Experience extends React.Component {
 				<ul>
 					{state.experience.map((element) => {
 						return (
-							<li key={element.company}>
+							<li key={element.id}>
 								<div>
 									{element.startDate}-{element.endDate} - {element.company},{' '}
 									{element.position}
