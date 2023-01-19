@@ -128,8 +128,8 @@ class Experience extends React.Component {
 			</form>
 		);
 
-		const AddButton = <button onClick={this.newExperience}>Add</button>;
-		let button = AddButton;
+		const addButton = <button onClick={this.newExperience}>Add</button>;
+		let button = addButton;
 
 		if (state.editing) {
 			editing = newForm;

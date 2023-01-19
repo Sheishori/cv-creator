@@ -104,8 +104,8 @@ class Education extends React.Component {
 			</form>
 		);
 
-		const AddButton = <button onClick={this.newEducation}>Add</button>;
-		let button = AddButton;
+		const addButton = <button onClick={this.newEducation}>Add</button>;
+		let button = addButton;
 
 		if (state.editing) {
 			editing = newForm;
