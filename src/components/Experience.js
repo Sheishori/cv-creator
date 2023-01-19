@@ -1,5 +1,6 @@
 import React from 'react';
 import uniqid from 'uniqid';
+import '../styles/Experience.css';
 
 class Experience extends React.Component {
 	constructor(props) {

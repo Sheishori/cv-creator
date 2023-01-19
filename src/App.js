@@ -2,6 +2,7 @@ import React from 'react';
 import PersonalInfo from './components/PersonalInfo';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import './styles/App.css';
 
 class App extends React.Component {
 	constructor() {
