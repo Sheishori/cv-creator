@@ -45,12 +45,15 @@ class PersonalInfo extends React.Component {
 		const { state, props } = this;
 
 		const nameInput = (
-			<input
-				type='text'
-				name='name'
-				value={state.name}
-				onChange={this.handleChange}
-			/>
+			<div>
+				<label htmlFor='name'>Name:</label>
+				<input
+					type='text'
+					name='name'
+					value={state.name}
+					onChange={this.handleChange}
+				/>
+			</div>
 		);
 		const emailInput = (
 			<input
@@ -93,12 +96,8 @@ class PersonalInfo extends React.Component {
 
 		return (
 			<form id='PersonalInfo'>
-				<p>Personal Information</p>
 				<ul>
-					<li>
-						<label htmlFor='name'>Name:</label>
-						{nameField}
-					</li>
+					<li>{nameField}</li>
 					<li>
 						<label htmlFor='email'>E-mail:</label>
 						{emailField}
