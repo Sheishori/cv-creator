@@ -1,8 +1,29 @@
-ul {
-	list-style: none;
-}
-
 #PersonalInfo {
 	color: white;
 	background-color: rgb(103, 117, 139);
+}
+
+ul {
+	list-style: none;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		'name email'
+		'name phone';
+}
+
+.name {
+	grid-area: name;
+	align-self: center;
+}
+
+.email {
+	grid-area: email;
+	justify-self: right;
+}
+
+.phone {
+	grid-area: phone;
+	justify-self: right;
 }

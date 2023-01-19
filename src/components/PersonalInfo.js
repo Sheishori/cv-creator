@@ -97,12 +97,12 @@ class PersonalInfo extends React.Component {
 		return (
 			<form id='PersonalInfo'>
 				<ul>
-					<li>{nameField}</li>
-					<li>
+					<li className='name'>{nameField}</li>
+					<li className='email'>
 						<label htmlFor='email'>E-mail:</label>
 						{emailField}
 					</li>
-					<li>
+					<li className='phone'>
 						<label htmlFor='phone'>Phone:</label>
 						{phoneField}
 					</li>
