@@ -19,8 +19,8 @@ body {
 	background-color: white;
 }
 
-.App form,
-.App div {
+.App > form,
+.App > div {
 	width: 900px;
 	padding: 3rem 10rem;
 }
