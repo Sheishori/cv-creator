@@ -21,6 +21,7 @@ class Experience extends React.Component {
 		this.newExperience = this.newExperience.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.saveExperience = this.saveExperience.bind(this);
+		this.delExperience = this.delExperience.bind(this);
 		this.cancel = this.cancel.bind(this);
 	}
 
@@ -71,6 +72,12 @@ class Experience extends React.Component {
 				id: uniqid(),
 			},
 			editing: false,
+		});
+	}
+
+	delExperience(id) {
+		this.setState({
+			experience: this.state.experience.filter((element) => element.id !== id),
 		});
 	}
 
@@ -155,6 +162,9 @@ class Experience extends React.Component {
 								<div>
 									{element.startDate}-{element.endDate} - {element.company},{' '}
 									{element.position}
+									<button onClick={() => this.delExperience(element.id)}>
+										Delete
+									</button>
 								</div>
 								<div>{element.tasks}</div>
 							</li>

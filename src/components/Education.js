@@ -19,6 +19,7 @@ class Education extends React.Component {
 		this.newEducation = this.newEducation.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.saveEducation = this.saveEducation.bind(this);
+		this.delEducation = this.delEducation.bind(this);
 		this.cancel = this.cancel.bind(this);
 	}
 
@@ -65,6 +66,12 @@ class Education extends React.Component {
 				id: uniqid(),
 			},
 			editing: false,
+		});
+	}
+
+	delEducation(id) {
+		this.setState({
+			education: this.state.education.filter((element) => element.id !== id),
 		});
 	}
 
@@ -129,6 +136,9 @@ class Education extends React.Component {
 						return (
 							<li key={element.id}>
 								{element.date} - {element.school}, Title: {element.title}
+								<button onClick={() => this.delEducation(element.id)}>
+									Delete
+								</button>
 							</li>
 						);
 					})}
