@@ -2,11 +2,6 @@ ul {
 	list-style: none;
 }
 
-li {
-	display: flex;
-	flex-direction: column;
-}
-
 #PersonalInfo {
 	color: white;
 	background-color: rgb(103, 117, 139);

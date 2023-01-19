@@ -72,9 +72,9 @@ class PersonalInfo extends React.Component {
 			/>
 		);
 
-		const nameDiv = <div>{state.name}</div>;
-		const emailDiv = <div>{state.email}</div>;
-		const phoneDiv = <div>{state.phone}</div>;
+		const nameDiv = <span>{state.name}</span>;
+		const emailDiv = <span>{state.email}</span>;
+		const phoneDiv = <span>{state.phone}</span>;
 		const submitButton = <button onClick={this.saveInfo}>Save</button>;
 		const editButton = <button onClick={this.editInfo}>Edit</button>;
 
