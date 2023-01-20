@@ -46,8 +46,8 @@ class App extends React.Component {
 				</header>
 				<main>
 					<PersonalInfo editing={editing} />
-					<Education editing={editing} />
 					<Experience editing={editing} />
+					<Education editing={editing} />
 				</main>
 				{button}
 			</div>
