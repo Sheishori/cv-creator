@@ -19,11 +19,15 @@ body {
 	flex-direction: column;
 }
 
-.App > form,
-.App > div {
+main {
 	width: 60rem;
-	padding: 3rem 10rem;
 	background-color: white;
+	box-shadow: 0.4rem 0.7rem 0.5rem rgb(88, 88, 88);
+}
+
+main > form,
+main > div {
+	padding: 3rem 10rem;
 }
 
 header {

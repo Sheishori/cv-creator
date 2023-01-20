@@ -44,9 +44,11 @@ class App extends React.Component {
 						by <a href='https://github.com/Sheishori'>Sheishori</a>
 					</div>
 				</header>
-				<PersonalInfo editing={editing} />
-				<Education editing={editing} />
-				<Experience editing={editing} />
+				<main>
+					<PersonalInfo editing={editing} />
+					<Education editing={editing} />
+					<Experience editing={editing} />
+				</main>
 				{button}
 			</div>
 		);
