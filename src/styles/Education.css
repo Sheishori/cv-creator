@@ -20,3 +20,15 @@
 #Education > button {
 	margin-top: 0.5rem;
 }
+
+.education-info {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: start;
+	gap: 5rem;
+	margin: 0.6rem 0;
+}
+
+.school-name {
+	font-weight: 600;
+}

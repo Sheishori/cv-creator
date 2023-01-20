@@ -172,8 +172,13 @@ class Education extends React.Component {
 						return (
 							<li key={element.id}>
 								<div className='education-info'>
-									{element.startDate}-{element.endDate} - {element.school},
-									Title: {element.title}
+									<div className='date'>
+										{element.startDate}-{element.endDate}
+									</div>
+									<div className='school-info'>
+										<div className='school-name'>{element.school}</div>
+										<div className='title'>{element.title}</div>
+									</div>
 								</div>
 								<div className='buttons'>
 									<button onClick={() => this.editEducation(element.id)}>

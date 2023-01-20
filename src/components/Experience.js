@@ -184,11 +184,14 @@ class Experience extends React.Component {
 						return (
 							<li key={element.id}>
 								<div className='experience-info'>
-									<div>
-										{element.startDate}-{element.endDate} - {element.company},{' '}
-										{element.position}
+									<div className='date'>
+										{element.startDate}-{element.endDate}
 									</div>
-									<div>{element.tasks}</div>
+									<div className='company-info'>
+										<div className='company-name'>{element.company}</div>
+										<div className='position'>{element.position}</div>
+										<div className='tasks'>{element.tasks}</div>
+									</div>
 								</div>
 								<div className='buttons'>
 									<button onClick={() => this.editExperience(element.id)}>
