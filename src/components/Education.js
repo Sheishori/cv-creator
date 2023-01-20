@@ -159,7 +159,9 @@ class Education extends React.Component {
 					{state.education.map((element) => {
 						return (
 							<li key={element.id}>
-								{element.date} - {element.school}, Title: {element.title}
+								<div className='education-info'>
+									{element.date} - {element.school}, Title: {element.title}
+								</div>
 								<div className='buttons'>
 									<button onClick={() => this.editEducation(element.id)}>
 										Edit
