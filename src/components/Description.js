@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Description.css';
 
 class Description extends React.Component {
 	constructor(props) {
@@ -58,11 +59,11 @@ class Description extends React.Component {
 		}
 
 		return (
-			<form id='Description'>
-				<label htmlFor='desc'>Description:</label>
+			<div id='Description'>
+				<label htmlFor='desc'>Description</label>
 				{descField}
 				{button}
-			</form>
+			</div>
 		);
 	}
 }
