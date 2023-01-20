@@ -27,3 +27,17 @@ ul {
 	grid-area: phone;
 	justify-self: right;
 }
+
+label {
+	margin-right: 0.5rem;
+}
+
+.name input,
+.name span {
+	font-size: 2rem;
+}
+
+.name input {
+	width: 80%;
+	display: block;
+}
