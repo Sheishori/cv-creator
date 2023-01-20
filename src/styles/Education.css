@@ -1,0 +1,12 @@
+#Education ul {
+	list-style: none;
+}
+
+#Education li {
+	display: flex;
+	align-items: center;
+}
+
+#Education .buttons {
+	margin-left: auto;
+}

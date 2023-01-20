@@ -160,12 +160,14 @@ class Education extends React.Component {
 						return (
 							<li key={element.id}>
 								{element.date} - {element.school}, Title: {element.title}
-								<button onClick={() => this.editEducation(element.id)}>
-									Edit
-								</button>
-								<button onClick={() => this.delEducation(element.id)}>
-									Delete
-								</button>
+								<div className='buttons'>
+									<button onClick={() => this.editEducation(element.id)}>
+										Edit
+									</button>
+									<button onClick={() => this.delEducation(element.id)}>
+										Delete
+									</button>
+								</div>
 							</li>
 						);
 					})}
