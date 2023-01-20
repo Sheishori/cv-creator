@@ -1,3 +1,7 @@
+#Description {
+	position: relative;
+}
+
 #Description label {
 	font-size: 1.3rem;
 	font-weight: 600;
@@ -15,4 +19,11 @@
 #Description div {
 	margin-top: 0.5rem;
 	font-size: 1rem;
+}
+
+#Description button {
+	position: absolute;
+	top: 50%;
+	right: -17%;
+	transform: translate(0, -50%);
 }
