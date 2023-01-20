@@ -164,6 +164,11 @@ class Education extends React.Component {
 			button = '';
 		}
 
+		let active = '';
+		if (props.editing === false) {
+			active = 'hidden';
+		}
+
 		return (
 			<div id='Education'>
 				<h3>Education</h3>
@@ -180,7 +185,7 @@ class Education extends React.Component {
 										<div className='title'>{element.title}</div>
 									</div>
 								</div>
-								<div className='buttons'>
+								<div className={'buttons ' + active}>
 									<button onClick={() => this.editEducation(element.id)}>
 										Edit
 									</button>

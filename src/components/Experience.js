@@ -176,6 +176,11 @@ class Experience extends React.Component {
 			button = '';
 		}
 
+		let active = '';
+		if (props.editing === false) {
+			active = 'hidden';
+		}
+
 		return (
 			<div id='Experience'>
 				<h3>Experience</h3>
@@ -193,7 +198,7 @@ class Experience extends React.Component {
 										<div className='tasks'>{element.tasks}</div>
 									</div>
 								</div>
-								<div className='buttons'>
+								<div className={'buttons ' + active}>
 									<button onClick={() => this.editExperience(element.id)}>
 										Edit
 									</button>
