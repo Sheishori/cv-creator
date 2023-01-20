@@ -1,7 +1,7 @@
 #Experience form ul {
 	list-style: none;
 	display: grid;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: 10rem 1fr;
 	align-items: center;
 }
 
@@ -15,6 +15,12 @@
 
 #Experience label {
 	margin: 0.5rem;
+}
+
+#Experience input {
+	font-size: 1rem;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.2rem;
 }
 
 #Experience > button {
