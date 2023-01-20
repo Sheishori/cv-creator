@@ -1,12 +1,22 @@
 #Education ul {
 	list-style: none;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
 }
 
 #Education li {
-	display: flex;
-	align-items: center;
+	display: contents;
 }
 
 #Education .buttons {
 	margin-left: auto;
+}
+
+#Education label {
+	margin: 0.5rem;
+}
+
+#Education > button {
+	margin-top: 0.5rem;
 }
