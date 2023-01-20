@@ -11,6 +11,7 @@ ul {
 	grid-template-areas:
 		'name email'
 		'name phone';
+	align-items: center;
 }
 
 .name {
@@ -20,12 +21,12 @@ ul {
 
 .email {
 	grid-area: email;
-	justify-self: right;
+	place-self: end right;
 }
 
 .phone {
 	grid-area: phone;
-	justify-self: right;
+	place-self: start right;
 }
 
 label {
