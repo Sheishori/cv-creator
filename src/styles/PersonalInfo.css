@@ -4,7 +4,7 @@
 	background-color: rgb(103, 117, 139);
 }
 
-ul {
+#PersonalInfo ul {
 	list-style: none;
 	display: grid;
 	grid-template-columns: auto auto;
@@ -13,6 +13,10 @@ ul {
 		'name email'
 		'name phone';
 	align-items: center;
+}
+
+#PersonalInfo label {
+	margin-right: 0.5rem;
 }
 
 .name {
@@ -28,10 +32,6 @@ ul {
 .phone {
 	grid-area: phone;
 	place-self: start right;
-}
-
-label {
-	margin-right: 0.5rem;
 }
 
 .name input,
