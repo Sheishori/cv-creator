@@ -20,9 +20,14 @@
 	font-size: 2rem;
 }
 
-.name input {
+.name input,
+.current-title input {
 	width: 80%;
 	display: block;
+}
+
+.right {
+	text-align: end;
 }
 
 #PersonalInfo button {
