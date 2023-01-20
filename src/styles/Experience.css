@@ -29,6 +29,15 @@
 	margin: 0.6rem 0;
 }
 
+.company-info div {
+	margin-bottom: 0.3rem;
+}
+
 .company-name {
 	font-weight: 600;
+	color: rgb(103, 117, 139);
+}
+
+.tasks {
+	font-size: 1rem;
 }
