@@ -183,9 +183,14 @@ class Experience extends React.Component {
 					{state.experience.map((element) => {
 						return (
 							<li key={element.id}>
-								<div>
-									{element.startDate}-{element.endDate} - {element.company},{' '}
-									{element.position}
+								<div className='experience-info'>
+									<div>
+										{element.startDate}-{element.endDate} - {element.company},{' '}
+										{element.position}
+									</div>
+									<div>{element.tasks}</div>
+								</div>
+								<div className='buttons'>
 									<button onClick={() => this.editExperience(element.id)}>
 										Edit
 									</button>
@@ -193,7 +198,6 @@ class Experience extends React.Component {
 										Delete
 									</button>
 								</div>
-								<div>{element.tasks}</div>
 							</li>
 						);
 					})}

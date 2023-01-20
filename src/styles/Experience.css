@@ -1,0 +1,22 @@
+#Experience ul {
+	list-style: none;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+}
+
+#Experience li {
+	display: contents;
+}
+
+#Experience .buttons {
+	margin-left: auto;
+}
+
+#Experience label {
+	margin: 0.5rem;
+}
+
+#Experience > button {
+	margin-top: 0.5rem;
+}
