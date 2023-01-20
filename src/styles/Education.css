@@ -52,11 +52,10 @@
 #Education .buttons {
 	position: absolute;
 	top: 50%;
-	right: -22%;
+	right: -18%;
 	transform: translate(0, -50%);
 }
 
 #Education .buttons button {
-	padding: 0.5rem 0;
-	width: 4rem;
+	padding: 0.5rem 0.5rem;
 }
