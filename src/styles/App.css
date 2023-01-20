@@ -41,3 +41,16 @@ header a {
 header a:hover {
 	text-decoration: underline;
 }
+
+.App button {
+	padding: 0.6rem 1rem;
+	background-color: rgb(230, 230, 230);
+	border: 0.1rem solid rgb(180, 180, 180);
+	border-radius: 0;
+}
+
+.App > button {
+	margin: 3rem;
+	width: 10rem;
+	align-self: center;
+}
