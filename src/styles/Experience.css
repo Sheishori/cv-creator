@@ -1,11 +1,11 @@
-#Experience ul {
+#Experience form ul {
 	list-style: none;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	align-items: center;
 }
 
-#Experience li {
+#Experience form li {
 	display: contents;
 }
 
@@ -39,4 +39,21 @@
 
 .tasks {
 	font-size: 1rem;
+}
+
+#Experience .all li {
+	list-style: none;
+	position: relative;
+}
+
+#Experience .buttons {
+	position: absolute;
+	top: 50%;
+	right: -22%;
+	transform: translate(0, -50%);
+}
+
+#Experience .buttons button {
+	padding: 0.5rem 0;
+	width: 4rem;
 }

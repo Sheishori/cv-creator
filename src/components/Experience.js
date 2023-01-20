@@ -203,7 +203,7 @@ class Experience extends React.Component {
 		return (
 			<div id='Experience'>
 				<h3>Experience</h3>
-				<ul>
+				<ul className='all'>
 					{state.experience.map((element) => {
 						return (
 							<li key={element.id}>

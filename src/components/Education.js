@@ -180,7 +180,7 @@ class Education extends React.Component {
 		return (
 			<div id='Education'>
 				<h3>Education</h3>
-				<ul>
+				<ul className='all'>
 					{state.education.map((element) => {
 						return (
 							<li key={element.id}>

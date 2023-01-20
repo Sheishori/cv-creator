@@ -1,11 +1,11 @@
-#Education ul {
+#Education form ul {
 	list-style: none;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	align-items: center;
 }
 
-#Education li {
+#Education form li {
 	display: contents;
 }
 
@@ -35,4 +35,20 @@
 .school-name {
 	font-weight: 600;
 	color: rgb(103, 117, 139);
+}
+
+#Education .all li {
+	list-style: none;
+	position: relative;
+}
+
+#Education .buttons {
+	position: absolute;
+	top: 50%;
+	right: -22%;
+	transform: translate(0, -50%);
+}
+#Experience .buttons button {
+	padding: 0.5rem 0;
+	width: 4rem;
 }
