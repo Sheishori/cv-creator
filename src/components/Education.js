@@ -11,7 +11,8 @@ class Education extends React.Component {
 			new: {
 				school: '',
 				title: '',
-				date: '',
+				startDate: '',
+				endDate: '',
 				id: uniqid(),
 			},
 			editing: false,
@@ -65,7 +66,8 @@ class Education extends React.Component {
 			new: {
 				school: '',
 				title: '',
-				date: '',
+				startDate: '',
+				endDate: '',
 				id: uniqid(),
 			},
 			editing: false,
@@ -78,7 +80,8 @@ class Education extends React.Component {
 			new: {
 				school: '',
 				title: '',
-				date: '',
+				startDate: '',
+				endDate: '',
 				id: uniqid(),
 			},
 			editing: false,
@@ -125,11 +128,20 @@ class Education extends React.Component {
 						/>
 					</li>
 					<li>
-						<label htmlFor='date'>Date of study:</label>
+						<label htmlFor='startDate'>Start date:</label>
 						<input
 							type='text'
-							name='date'
-							value={state.new.date}
+							name='startDate'
+							value={state.new.startDate}
+							onChange={this.handleChange}
+						/>
+					</li>
+					<li>
+						<label htmlFor='endDate'>End date:</label>
+						<input
+							type='text'
+							name='endDate'
+							value={state.new.endDate}
 							onChange={this.handleChange}
 						/>
 					</li>
@@ -160,7 +172,8 @@ class Education extends React.Component {
 						return (
 							<li key={element.id}>
 								<div className='education-info'>
-									{element.date} - {element.school}, Title: {element.title}
+									{element.startDate}-{element.endDate} - {element.school},
+									Title: {element.title}
 								</div>
 								<div className='buttons'>
 									<button onClick={() => this.editEducation(element.id)}>
