@@ -38,6 +38,12 @@ class App extends React.Component {
 
 		return (
 			<div className='App'>
+				<header>
+					<h1>CV Creator</h1>
+					<div>
+						by <a href='https://github.com/Sheishori'>Sheishori</a>
+					</div>
+				</header>
 				<PersonalInfo editing={editing} />
 				<Education editing={editing} />
 				<Experience editing={editing} />
