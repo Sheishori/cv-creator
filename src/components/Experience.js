@@ -217,11 +217,17 @@ class Experience extends React.Component {
 										<div className='tasks'>{element.tasks}</div>
 									</div>
 								</div>
-								<div className={'buttons ' + active}>
-									<button onClick={() => this.editExperience(element.id)}>
+								<div className='buttons'>
+									<button
+										className={active}
+										onClick={() => this.editExperience(element.id)}
+									>
 										Edit
 									</button>
-									<button onClick={() => this.delExperience(element.id)}>
+									<button
+										className={active}
+										onClick={() => this.delExperience(element.id)}
+									>
 										Delete
 									</button>
 								</div>

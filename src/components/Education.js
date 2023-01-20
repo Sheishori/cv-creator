@@ -193,11 +193,17 @@ class Education extends React.Component {
 										<div className='title'>{element.title}</div>
 									</div>
 								</div>
-								<div className={'buttons ' + active}>
-									<button onClick={() => this.editEducation(element.id)}>
+								<div className='buttons'>
+									<button
+										className={active}
+										onClick={() => this.editEducation(element.id)}
+									>
 										Edit
 									</button>
-									<button onClick={() => this.delEducation(element.id)}>
+									<button
+										className={active}
+										onClick={() => this.delEducation(element.id)}
+									>
 										Delete
 									</button>
 								</div>
