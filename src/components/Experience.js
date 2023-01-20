@@ -13,7 +13,7 @@ class Experience extends React.Component {
 					position: 'Web Developer',
 					tasks:
 						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet nisl urna. Morbi sed posuere velit. Pellentesque ac dui congue, venenatis lorem ut, posuere purus.',
-					startDate: '2016',
+					startDate: '2020',
 					endDate: 'Present',
 					id: 123,
 				},
