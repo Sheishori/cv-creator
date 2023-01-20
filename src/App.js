@@ -1,5 +1,6 @@
 import React from 'react';
 import PersonalInfo from './components/PersonalInfo';
+import Description from './components/Description';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import './styles/App.css';
@@ -46,6 +47,7 @@ class App extends React.Component {
 				</header>
 				<main>
 					<PersonalInfo editing={editing} />
+					<Description editing={editing} />
 					<Experience editing={editing} />
 					<Education editing={editing} />
 				</main>
