@@ -44,6 +44,7 @@ class App extends React.Component {
 					<div>
 						by <a href='https://github.com/Sheishori'>Sheishori</a>
 					</div>
+					{button}
 				</header>
 				<main>
 					<PersonalInfo editing={editing} />
@@ -51,7 +52,6 @@ class App extends React.Component {
 					<Experience editing={editing} />
 					<Education editing={editing} />
 				</main>
-				{button}
 			</div>
 		);
 	}
