@@ -154,7 +154,7 @@ class Education extends React.Component {
 
 		return (
 			<div id='Education'>
-				<p>Education</p>
+				<h3>Education</h3>
 				<ul>
 					{state.education.map((element) => {
 						return (
