@@ -209,7 +209,7 @@ class Experience extends React.Component {
 							<li key={element.id}>
 								<div className='experience-info'>
 									<div className='date'>
-										{element.startDate}-{element.endDate}
+										{element.startDate} - {element.endDate}
 									</div>
 									<div className='company-info'>
 										<div className='company-name'>{element.company}</div>

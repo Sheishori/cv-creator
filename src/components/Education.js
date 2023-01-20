@@ -186,7 +186,7 @@ class Education extends React.Component {
 							<li key={element.id}>
 								<div className='education-info'>
 									<div className='date'>
-										{element.startDate}-{element.endDate}
+										{element.startDate} - {element.endDate}
 									</div>
 									<div className='school-info'>
 										<div className='school-name'>{element.school}</div>
