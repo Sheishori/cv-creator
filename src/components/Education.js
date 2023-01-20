@@ -7,7 +7,15 @@ class Education extends React.Component {
 		super(props);
 
 		this.state = {
-			education: [],
+			education: [
+				{
+					school: 'Technological University',
+					title: "Master's Degree in IT",
+					startDate: '2012',
+					endDate: '2016',
+					id: 789,
+				},
+			],
 			new: {
 				school: '',
 				title: '',

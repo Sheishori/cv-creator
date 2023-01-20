@@ -7,7 +7,26 @@ class Experience extends React.Component {
 		super(props);
 
 		this.state = {
-			experience: [],
+			experience: [
+				{
+					company: 'Great Web Company',
+					position: 'Web Developer',
+					tasks:
+						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet nisl urna. Morbi sed posuere velit. Pellentesque ac dui congue, venenatis lorem ut, posuere purus.',
+					startDate: '2016',
+					endDate: 'Present',
+					id: 123,
+				},
+				{
+					company: 'Neat Web Company',
+					position: 'Junior Web Developer',
+					tasks:
+						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet nisl urna. Morbi sed posuere velit. Pellentesque ac dui congue, venenatis lorem ut, posuere purus.',
+					startDate: '2016',
+					endDate: '2020',
+					id: 456,
+				},
+			],
 			new: {
 				company: '',
 				position: '',

@@ -6,10 +6,10 @@ class PersonalInfo extends React.Component {
 		super(props);
 
 		this.state = {
-			name: '',
-			currentTitle: '',
-			email: '',
-			phone: '',
+			name: 'John John',
+			currentTitle: 'Web Developer',
+			email: 'john.john@gmail.com',
+			phone: '123456789',
 			editing: true,
 		};
 
