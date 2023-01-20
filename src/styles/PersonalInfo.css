@@ -8,30 +8,11 @@
 	list-style: none;
 	display: grid;
 	grid-template-columns: auto auto;
-	grid-template-rows: auto auto;
-	grid-template-areas:
-		'name email'
-		'name phone';
 	align-items: center;
 }
 
 #PersonalInfo label {
 	margin-right: 0.5rem;
-}
-
-.name {
-	grid-area: name;
-	align-self: center;
-}
-
-.email {
-	grid-area: email;
-	place-self: end right;
-}
-
-.phone {
-	grid-area: phone;
-	place-self: start right;
 }
 
 .name input,

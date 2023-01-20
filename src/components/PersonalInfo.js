@@ -7,6 +7,7 @@ class PersonalInfo extends React.Component {
 
 		this.state = {
 			name: '',
+			currentTitle: '',
 			email: '',
 			phone: '',
 			editing: true,
@@ -55,6 +56,17 @@ class PersonalInfo extends React.Component {
 				/>
 			</div>
 		);
+		const titleInput = (
+			<div>
+				<label htmlFor='title'>Title:</label>
+				<input
+					type='title'
+					name='currentTitle'
+					value={state.currentTitle}
+					onChange={this.handleChange}
+				/>
+			</div>
+		);
 		const emailInput = (
 			<input
 				type='text'
@@ -73,18 +85,21 @@ class PersonalInfo extends React.Component {
 		);
 
 		const nameDiv = <span>{state.name}</span>;
+		const titleDiv = <span>{state.currentTitle}</span>;
 		const emailDiv = <span>{state.email}</span>;
 		const phoneDiv = <span>{state.phone}</span>;
 		const submitButton = <button onClick={this.saveInfo}>Save</button>;
 		const editButton = <button onClick={this.editInfo}>Edit</button>;
 
 		let nameField = nameInput;
+		let titleField = titleInput;
 		let emailField = emailInput;
 		let phoneField = phoneInput;
 		let button = submitButton;
 
 		if (state.editing === false || props.editing === false) {
 			nameField = nameDiv;
+			titleField = titleDiv;
 			emailField = emailDiv;
 			phoneField = phoneDiv;
 			button = editButton;
@@ -97,15 +112,20 @@ class PersonalInfo extends React.Component {
 		return (
 			<form id='PersonalInfo'>
 				<ul>
-					<li className='name'>{nameField}</li>
-					<li className='email'>
-						<label htmlFor='email'>E-mail:</label>
-						{emailField}
-					</li>
-					<li className='phone'>
-						<label htmlFor='phone'>Phone:</label>
-						{phoneField}
-					</li>
+					<div className='left'>
+						<li className='name'>{nameField}</li>
+						<li className='current-title'>{titleField}</li>
+					</div>
+					<div className='right'>
+						<li className='email'>
+							<label htmlFor='email'>E-mail:</label>
+							{emailField}
+						</li>
+						<li className='phone'>
+							<label htmlFor='phone'>Phone:</label>
+							{phoneField}
+						</li>
+					</div>
 				</ul>
 				{button}
 			</form>
