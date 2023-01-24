@@ -1,60 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PersonalInfo from './components/PersonalInfo';
 import Description from './components/Description';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import './styles/App.css';
 
-class App extends React.Component {
-	constructor() {
-		super();
+function App() {
+	const [editing, setEditing] = useState(true);
 
-		this.state = {
-			editing: true,
-		};
-
-		this.submit = this.submit.bind(this);
-		this.edit = this.edit.bind(this);
+	function submit() {
+		setEditing(false);
 	}
 
-	submit() {
-		this.setState({
-			editing: false,
-		});
+	function edit() {
+		setEditing(true);
 	}
 
-	edit() {
-		this.setState({
-			editing: true,
-		});
-	}
+	const submitButton = <button onClick={submit}>Submit</button>;
+	const editButton = <button onClick={edit}>Edit</button>;
+	let button = submitButton;
 
-	render() {
-		const { editing } = this.state;
-		const submitButton = <button onClick={this.submit}>Submit</button>;
-		const editButton = <button onClick={this.edit}>Edit</button>;
-		let button = submitButton;
+	if (editing === false) button = editButton;
 
-		if (editing === false) button = editButton;
-
-		return (
-			<div className='App'>
-				<header>
-					<h1>CV Creator</h1>
-					<div>
-						by <a href='https://github.com/Sheishori'>Sheishori</a>
-					</div>
-					{button}
-				</header>
-				<main>
-					<PersonalInfo editing={editing} />
-					<Description editing={editing} />
-					<Experience editing={editing} />
-					<Education editing={editing} />
-				</main>
-			</div>
-		);
-	}
+	return (
+		<div className='App'>
+			<header>
+				<h1>CV Creator</h1>
+				<div>
+					by <a href='https://github.com/Sheishori'>Sheishori</a>
+				</div>
+				{button}
+			</header>
+			<main>
+				<PersonalInfo editing={editing} />
+				<Description editing={editing} />
+				<Experience editing={editing} />
+				<Education editing={editing} />
+			</main>
+		</div>
+	);
 }
 
 export default App;
