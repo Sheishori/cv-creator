@@ -10,13 +10,11 @@ function Description(props) {
 	}
 
 	const [editing, setEditing] = useState(true);
-	function saveInfo(event) {
-		event.preventDefault();
+	function saveInfo() {
 		setEditing(false);
 	}
 
-	function editInfo(event) {
-		event.preventDefault();
+	function editInfo() {
 		setEditing(true);
 	}
 
